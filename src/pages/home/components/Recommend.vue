@@ -2,7 +2,7 @@
   <div>
     <div class="title">热销推荐</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <img class="item-img" :src='item.imgUrl'>
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -17,25 +17,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: 'https://img1.ykclass.com/img/paths/2018/4/11/df9f0a1a84a64b21af3cfa316b1878d9.jpg',
-        title: '1中级会计实务中级会计实务中级会计实务中级会计实务',
-        desc: '中级会计实务名师体验课中级会计实务名师体验课'
-      }, {
-        id: '0002',
-        imgUrl: 'https://img1.ykclass.com/img/paths/2018/4/11/df9f0a1a84a64b21af3cfa316b1878d9.jpg',
-        title: '2中级会计实务中级会计实务中级会计实务中级会计实务',
-        desc: '中级会计实务名师体验课中级会计实务名师体验课'
-      }, {
-        id: '0003',
-        imgUrl: 'https://img1.ykclass.com/img/paths/2018/4/11/df9f0a1a84a64b21af3cfa316b1878d9.jpg',
-        title: '3中级会计实务中级会计实务中级会计实务中级会计实务',
-        desc: '中级会计实务名师体验课中级会计实务名师体验课'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
